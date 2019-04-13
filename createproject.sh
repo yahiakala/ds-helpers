@@ -35,16 +35,28 @@
 # I only use this on ubuntu. Adapt as you wish for other distros.
 #
 # conda/miniconda.
+#
 # conda-forge channel. (conda config --add channels conda-forge)
-# cookiecutter. (install via conda or via pip - see link at top).
+# 
+# cookiecutter. (install via conda or via pip - I suggest conda).
+# 
 # unzip. (sudo apt-get install unzip)
+# 
+# If using kaggle, make sure your API key is configured. See
+# 	https://github.com/Kaggle/kaggle-api
+#
+# If pushing to github, you must have your account configured
+# in git. See
+# https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 #
 # -------------------------------------------------------------------
 # HOW TO USE
 # -------------------------------------------------------------------
 # Go to a parent folder where your repo folder will go in. Then run
-# ./path/to/createproject.sh
+# 	./path/to/createproject.sh
+# 
 # Then follow the prompts.
+# 
 # -------------------------------------------------------------------
 
 # Cookiecutter download here. 
@@ -132,6 +144,8 @@ if [[ $create_git == "y" ]]; then
 	if [[ $create_github == "y" ]]; then
 		read -p "Provide your GitHub username. " github_username
 		curl -u $github_username https://api.github.com/user/repos -d '{"name":"'"$environment_name"'"}'
+		# TODO: add description to GitHub repo
+		# see this link for info on inputs: https://developer.github.com/v3/repos/#create.
 		git remote add origin https://github.com/$github_username/$environment_name.git
 		git push origin master
 	else
