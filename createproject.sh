@@ -53,7 +53,7 @@
 # HOW TO USE
 # -------------------------------------------------------------------
 # Go to a parent folder where your repo folder will go in. Then run
-# 	./path/to/createproject.sh
+# 	source ~/path/to/createproject.sh
 # 
 # Then follow the prompts.
 # 
