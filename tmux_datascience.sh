@@ -52,6 +52,7 @@ tmux send-keys "clear" ENTER
 # Create a third window for notebooks
 tmux new-window -n notebook
 tmux send-keys "conda activate $CONDANAME" ENTER
+tmux send-keys "cd notebooks" ENTER
 tmux send-keys "clear" ENTER
 
 # Go back to TDD
